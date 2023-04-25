@@ -24,7 +24,7 @@ cartRouter.get("/:cid", async (req, res) => {
 
 })
 
-cartRouter.post("/:cid/products/:pid", async (req, res) => {
+cartRouter.post("/:cid/product/:pid", async (req, res) => {
     try {
         await cartManager.addProductCart(req.params.cid, req.body.quantity, req.params.pid)
         res.send("Producto agregado al carrito");

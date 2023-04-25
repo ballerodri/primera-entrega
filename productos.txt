@@ -1,1 +1,1 @@
-[]
+[{"title":"pc","description":"nueva","price":2000,"thumbnail":[],"code":"R123","stock":1,"category":"Tecnologia","status":false,"id":1},{"title":"notebook","description":"nueva","price":2150,"thumbnail":[],"code":"R122","stock":3,"category":"Tecnologia","status":true,"id":2},{"title":"monitor","description":"nueva","price":1000,"thumbnail":[],"code":"R100","stock":4,"category":"Tecnologia","status":true,"id":3}]
