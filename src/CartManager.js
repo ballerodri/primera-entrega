@@ -43,8 +43,10 @@ export class CartManager {
         if (carrito.products.some(product => product.product === parseInt(id))) {
             let index = carrito.products.findIndex(product => product.product === parseInt(id))
             carrito.products[index].product = parseInt(id)
-            carrito.products[index].quantity = parseInt(quantity)
-            await fs.writeFile(this.path, JSON.stringify([carrito]))
+            //carrito.products[index].quantity = parseInt(quantity) corrección del tutor
+            carrito.products[index].quantity = carrito.products[index].quantity + parseInt(quantity)
+            //await fs.writeFile(this.path, JSON.stringify([carrito])) corrección del tutor
+            await fs.writeFile(this.path, JSON.stringify(carts))
             return "Producto agregado"
         } else {
                 const newproduct = {"product":parseInt(id),"quantity":parseInt(quantity)}

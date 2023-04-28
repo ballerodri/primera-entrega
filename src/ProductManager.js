@@ -24,9 +24,14 @@ export class ProductManager {
         return "Producto creado"
     }
 
-    async getProducts(limit) {
-        const prods = await fs.readFile(this.path, 'utf-8')
-        return JSON.parse(prods).slice(0, parseInt(limit))
+    async getProducts(limit) { //se agrega if para preguntar si enviaron o no limit
+        if (limit != undefined) {
+            const prods = await fs.readFile(this.path, 'utf-8')
+            return JSON.parse(prods).slice(0, parseInt(limit))
+        } else {
+            const prods = await fs.readFile(this.path, 'utf-8')
+            return JSON.parse(prods)
+        }
     }
 
     async getProductById(id) {
