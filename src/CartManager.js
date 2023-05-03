@@ -51,7 +51,8 @@ export class CartManager {
         } else {
                 const newproduct = {"product":parseInt(id),"quantity":parseInt(quantity)}
                 carrito.products.push(newproduct)
-                await fs.writeFile(this.path, JSON.stringify([carrito]))
+                carts.push(carrito)
+                await fs.writeFile(this.path, JSON.stringify(carts))
                 return "Producto agregado"
         }
     }
